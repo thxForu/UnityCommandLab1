@@ -18,6 +18,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="MouseLook.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
         </e>
       </e>
