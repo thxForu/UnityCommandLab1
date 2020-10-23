@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class OpenDoorByButton : MonoBehaviour
 {
-    public GameObject obj;
+    // public GameObject obj;
+    // // public Transform target;
+    public int id;
 
-    private void OnTriggerEnter(Collider other) {
-        
-    }
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        GameEvents.current.Open(id);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // void Start()
+    // {
+    //     obj  = GameObject.Find("Door");
+    // }
 
-    void upDoor(){}
+    // IEnumerator MoveUp()
+    // {
+    // }
+
 }
