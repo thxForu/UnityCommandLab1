@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class OpenDoorByButton : MonoBehaviour
 {
-    // public GameObject obj;
-    // // public Transform target;
     public int id;
+    // private void Start() {
+    //     GameEvents.current.changeLockDoorCount +=ChangeLockDoorCount;
+    // }
 
     private void OnTriggerEnter(Collider other)
     {
         GameEvents.current.Open(id);
+        gameObject.GetComponent<Collider>().enabled = false;
     }
 
-    // void Start()
-    // {
-    //     obj  = GameObject.Find("Door");
-    // }
+    private void ChangeLockDoorCount(){
 
-    // IEnumerator MoveUp()
-    // {
-    // }
+    }
 
 }

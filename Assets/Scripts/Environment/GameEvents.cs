@@ -18,4 +18,12 @@ public class GameEvents : MonoBehaviour
             openDoor(id);
         }
     }
+
+    public event Action changeHealth;
+    public void ChangeHealth(){
+        if(changeHealth != null){
+            changeHealth();
+        }
+    }
+
 }
