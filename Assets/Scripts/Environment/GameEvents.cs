@@ -26,4 +26,11 @@ public class GameEvents : MonoBehaviour
         }
     }
 
+    public event Action restartLevel;
+    public void RestartLevel(){
+        if(restartLevel != null){
+            restartLevel();
+        }
+    }
+
 }

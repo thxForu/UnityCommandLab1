@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class HealthCount : MonoBehaviour
 {
-
-    public int healthCount = 4;
     private Text healthCountText;
+
+    public GameObject canvas;
     // Start is called before the first frame update
+
     void Start()
     {
         healthCountText = GetComponent<Text>();
@@ -18,22 +19,14 @@ public class HealthCount : MonoBehaviour
         GameEvents.current.changeHealth +=ChangeHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Q)){
-            ChangeHealth();
-        }        
-    }
-
     private void ChangeHealth(){
-        healthCount--;
+        Health.healthCount--;
         ShowHealth();       
     }
 
     private void ShowHealth(){
         healthCountText.text = "";
-        for (int i = 0; i < healthCount; i++)
+        for (int i = 0; i < Health.healthCount; i++)
         {
             healthCountText.text += "❤️";
         }
