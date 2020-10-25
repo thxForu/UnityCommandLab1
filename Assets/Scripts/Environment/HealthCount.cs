@@ -7,12 +7,14 @@ public class HealthCount : MonoBehaviour
 {
     private Text healthCountText;
 
-    public GameObject canvas;
+    private Text loseText;
     // Start is called before the first frame update
 
     void Start()
     {
         healthCountText = GetComponent<Text>();
+
+        loseText = GameObject.Find("Lose").GetComponent<Text>();
 
         ShowHealth();
 
@@ -21,7 +23,12 @@ public class HealthCount : MonoBehaviour
 
     private void ChangeHealth(){
         Health.healthCount--;
-        ShowHealth();       
+        ShowHealth();
+        if(Health.healthCount == 0){
+            loseText.text = Health.loseText;
+            loseText.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     private void ShowHealth(){

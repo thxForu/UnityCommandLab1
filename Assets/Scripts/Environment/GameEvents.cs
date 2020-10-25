@@ -33,4 +33,11 @@ public class GameEvents : MonoBehaviour
         }
     }
 
+    public event Action inTouchPrincess;
+    public void InTouchPrincess(){
+        if(inTouchPrincess != null){
+            inTouchPrincess();
+        }
+    }
+
 }
