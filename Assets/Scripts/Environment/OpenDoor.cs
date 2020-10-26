@@ -14,7 +14,7 @@ public class OpenDoor : MonoBehaviour
     {
         if(id == this.id)
         {
-            LeanTween.moveLocalY(gameObject,6f,2).setEaseOutQuad();
+            LeanTween.moveLocalY(gameObject,12f,2).setEaseOutQuad();
         }
     }
 
