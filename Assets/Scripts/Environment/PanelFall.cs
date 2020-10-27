@@ -6,23 +6,20 @@ public class PanelFall : MonoBehaviour
 {
     Rigidbody rigidBody;
     public float sec;
-    // Start is called before the first frame update
+    
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void OnTriggerEnter(Collider other) {
-        StartCoroutine(CorouitineSample());
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(CorouitineSample());
+        }
     }
 
-    public IEnumerator CorouitineSample(){
+    private IEnumerator CorouitineSample(){
         yield return new WaitForSeconds(sec);
         FallDown();
     }

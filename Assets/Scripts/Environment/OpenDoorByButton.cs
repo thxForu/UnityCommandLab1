@@ -10,5 +10,12 @@ public class OpenDoorByButton : MonoBehaviour
     {
         GameEvents.current.Open(id);
         gameObject.GetComponent<Collider>().enabled = false;
+        StartCoroutine(CoroutineSample());
+    }
+
+    private IEnumerator CoroutineSample(){
+        LeanTween.moveLocalY(gameObject,7.15f,2).setEaseOutQuad();
+        yield return null;
     }
 }
+
