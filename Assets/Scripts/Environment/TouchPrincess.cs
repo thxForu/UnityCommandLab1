@@ -17,6 +17,5 @@ public class TouchPrincess : MonoBehaviour
     private void InTouchPrincess(){
         congratText.text = "";
         congratText.text = "You Won!";
-        Time.timeScale = 0;
     }
 }
