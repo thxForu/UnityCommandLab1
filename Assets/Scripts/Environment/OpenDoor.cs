@@ -10,7 +10,7 @@ public class OpenDoor : MonoBehaviour
         GameEvents.current.openDoor += Open;
     }
 
-private void Open(int id)
+    private void Open(int id)
     {
         if(id == this.id)
         {
